@@ -1,0 +1,25 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [],
+  "fields": [
+    {
+      "fieldName": "nomeCompleto",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tipoDependente",
+      "fieldType": "dependenteEnum",
+      "fieldValues": "ESPOSA,FILHO,PAI,MAE,MARIDO"
+    }
+  ],
+  "changelogDate": "20210117194433",
+  "dto": "no",
+  "searchEngine": false,
+  "service": "serviceClass",
+  "entityTableName": "dependente",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination"
+}

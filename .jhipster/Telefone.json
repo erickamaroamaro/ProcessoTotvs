@@ -1,0 +1,32 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [],
+  "fields": [
+    {
+      "fieldName": "codigoPais",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ddd",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "numero",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tipo",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20210117195916",
+  "dto": "no",
+  "searchEngine": false,
+  "service": "serviceClass",
+  "entityTableName": "telefone",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination"
+}

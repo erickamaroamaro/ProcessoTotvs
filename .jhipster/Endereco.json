@@ -1,0 +1,57 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [],
+  "fields": [
+    {
+      "fieldName": "tipoEndereco",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tipo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numero",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "complemento",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cep",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bairro",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cidade",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "estado",
+      "fieldType": "estadosEnum",
+      "fieldValues": "SP,RJ,MA,RO,BA,AC,AL,AP,AM,CE,DF,ES,MS,MG,PA"
+    },
+    {
+      "fieldName": "pais",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20210117193406",
+  "dto": "no",
+  "searchEngine": false,
+  "service": "serviceClass",
+  "entityTableName": "endereco",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination"
+}
