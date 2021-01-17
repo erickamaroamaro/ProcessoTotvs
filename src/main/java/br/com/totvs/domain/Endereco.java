@@ -1,5 +1,6 @@
 package br.com.totvs.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
@@ -50,6 +51,10 @@ public class Endereco implements Serializable {
 
     @Column(name = "pais")
     private String pais;
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = "enderecos", allowSetters = true)
+    private Pessoa pessoa;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -188,6 +193,19 @@ public class Endereco implements Serializable {
 
     public void setPais(String pais) {
         this.pais = pais;
+    }
+
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public Endereco pessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+        return this;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

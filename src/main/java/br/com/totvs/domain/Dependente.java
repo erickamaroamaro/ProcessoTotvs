@@ -1,5 +1,6 @@
 package br.com.totvs.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
@@ -26,6 +27,10 @@ public class Dependente implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo_dependente")
     private dependenteEnum tipoDependente;
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = "dependentes", allowSetters = true)
+    private Pessoa pessoa;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -60,6 +65,19 @@ public class Dependente implements Serializable {
 
     public void setTipoDependente(dependenteEnum tipoDependente) {
         this.tipoDependente = tipoDependente;
+    }
+
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public Dependente pessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+        return this;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

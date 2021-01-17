@@ -1,5 +1,6 @@
 package br.com.totvs.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
@@ -29,6 +30,10 @@ public class Telefone implements Serializable {
 
     @Column(name = "tipo")
     private String tipo;
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = "telefones", allowSetters = true)
+    private Pessoa pessoa;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -89,6 +94,19 @@ public class Telefone implements Serializable {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public Telefone pessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+        return this;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

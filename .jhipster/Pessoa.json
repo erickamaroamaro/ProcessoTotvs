@@ -1,7 +1,26 @@
 {
   "fluentMethods": true,
   "clientRootFolder": "",
-  "relationships": [],
+  "relationships": [
+    {
+      "relationshipName": "endereco",
+      "otherEntityName": "endereco",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "pessoa"
+    },
+    {
+      "relationshipName": "dependente",
+      "otherEntityName": "dependente",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "pessoa"
+    },
+    {
+      "relationshipName": "telefone",
+      "otherEntityName": "telefone",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "pessoa"
+    }
+  ],
   "fields": [
     {
       "fieldName": "nome",

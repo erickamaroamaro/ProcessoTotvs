@@ -1,7 +1,15 @@
 {
   "fluentMethods": true,
   "clientRootFolder": "",
-  "relationships": [],
+  "relationships": [
+    {
+      "relationshipName": "pessoa",
+      "otherEntityName": "pessoa",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id",
+      "otherEntityRelationshipName": "telefone"
+    }
+  ],
   "fields": [
     {
       "fieldName": "codigoPais",

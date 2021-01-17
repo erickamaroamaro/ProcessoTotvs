@@ -5,6 +5,8 @@ import javax.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A Pessoa.
@@ -36,6 +38,15 @@ public class Pessoa implements Serializable {
 
     @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
+
+    @OneToMany(mappedBy = "pessoa")
+    private Set<Endereco> enderecos = new HashSet<>();
+
+    @OneToMany(mappedBy = "pessoa")
+    private Set<Dependente> dependentes = new HashSet<>();
+
+    @OneToMany(mappedBy = "pessoa")
+    private Set<Telefone> telefones = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -122,6 +133,81 @@ public class Pessoa implements Serializable {
 
     public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
+    }
+
+    public Set<Endereco> getEnderecos() {
+        return enderecos;
+    }
+
+    public Pessoa enderecos(Set<Endereco> enderecos) {
+        this.enderecos = enderecos;
+        return this;
+    }
+
+    public Pessoa addEndereco(Endereco endereco) {
+        this.enderecos.add(endereco);
+        endereco.setPessoa(this);
+        return this;
+    }
+
+    public Pessoa removeEndereco(Endereco endereco) {
+        this.enderecos.remove(endereco);
+        endereco.setPessoa(null);
+        return this;
+    }
+
+    public void setEnderecos(Set<Endereco> enderecos) {
+        this.enderecos = enderecos;
+    }
+
+    public Set<Dependente> getDependentes() {
+        return dependentes;
+    }
+
+    public Pessoa dependentes(Set<Dependente> dependentes) {
+        this.dependentes = dependentes;
+        return this;
+    }
+
+    public Pessoa addDependente(Dependente dependente) {
+        this.dependentes.add(dependente);
+        dependente.setPessoa(this);
+        return this;
+    }
+
+    public Pessoa removeDependente(Dependente dependente) {
+        this.dependentes.remove(dependente);
+        dependente.setPessoa(null);
+        return this;
+    }
+
+    public void setDependentes(Set<Dependente> dependentes) {
+        this.dependentes = dependentes;
+    }
+
+    public Set<Telefone> getTelefones() {
+        return telefones;
+    }
+
+    public Pessoa telefones(Set<Telefone> telefones) {
+        this.telefones = telefones;
+        return this;
+    }
+
+    public Pessoa addTelefone(Telefone telefone) {
+        this.telefones.add(telefone);
+        telefone.setPessoa(this);
+        return this;
+    }
+
+    public Pessoa removeTelefone(Telefone telefone) {
+        this.telefones.remove(telefone);
+        telefone.setPessoa(null);
+        return this;
+    }
+
+    public void setTelefones(Set<Telefone> telefones) {
+        this.telefones = telefones;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
