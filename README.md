@@ -1,16 +1,23 @@
 # cadastroPessoasTotvs
 
-This application was generated using JHipster 6.10.4, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.10.4](https://www.jhipster.tech/documentation-archive/v6.10.4).
+##Para executar este projeto será necessario as seguintes tecnologias:
+java 8 <br>
+Mysql <br>
+Maven <br>
 
-## Development
+##Dentro do arquivo application-dev.yml e do pom.xml:
+configurar a senha do seu mysql local, ou alterar a senha do seu mysql local para root
 
-To start your application in the dev profile, run:
+##Para rodar o projeto executar o seguinte comando:
 
 ```
 ./mvnw
+ou
+mvn
 ```
 
-For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
+##Link para swagger:
+http://localhost:8080/swagger-ui.html#/
 
 ## Building for production
 
