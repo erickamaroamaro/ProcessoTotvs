@@ -21,7 +21,7 @@ logging:
 
 spring:
   profiles:
-    active: dev
+    active: dev, swagger
     include:
       - swagger
       # Uncomment to activate TLS for the dev profile
@@ -104,7 +104,17 @@ jhipster:
       queue-size: 512
   audit-events:
     retention-period: 30 # Number of days before audit events are deleted.
-
+  swagger:
+    default-include-pattern: /api/.*
+    title: cadastroPessoasTotvs API
+    description: cadastroPessoasTotvs API documentation
+    version: 0.0.1
+    terms-of-service-url:
+    contact-name:
+    contact-url:
+    contact-email:
+    license: unlicensed
+    license-url:
 # ===================================================================
 # Application specific properties
 # Add your own application properties here, see the ApplicationProperties class
